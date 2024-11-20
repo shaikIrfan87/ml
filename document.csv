@@ -1,0 +1,9 @@
+message,label
+"Great job, well done!",pos
+"I am very happy with this service",pos
+"Terrible experience, will not buy again",neg
+"Not what I expected, very disappointing",neg
+"Excellent product, highly recommend it",pos
+"Will not recommend, poor quality",neg
+"Absolutely love it, amazing!",pos
+"Bad quality, waste of money",neg
