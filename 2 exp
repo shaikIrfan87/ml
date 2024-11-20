@@ -1,0 +1,40 @@
+import csv
+
+# Open and read the CSV file
+with open("trainingdata.csv") as f:
+    csv_file = csv.reader(f)
+    data = list(csv_file)
+
+# Initialize the specific and general hypotheses
+s = data[1][:-1]
+g = [['?' for _ in range(len(s))] for _ in range(len(s))]
+
+# Apply the Candidate Elimination Algorithm
+for i in data[1:]:  # Skip the header row
+    if i[-1] == "Yes":  # Positive instance
+        for j in range(len(s)):
+            if i[j] != s[j]:
+                s[j] = '?'  # Update specific hypothesis
+                g[j][j] = '?'  # Update general hypothesis
+
+    elif i[-1] == "No":  # Negative instance
+        for j in range(len(s)):
+            if i[j] != s[j]:
+                g[j][j] = s[j]  # Update general hypothesis
+            else:
+                g[j][j] = "?"  # Reset general hypothesis
+
+    # Display intermediate results
+    print("\nSteps of Candidate Elimination Algorithm:", data.index(i) + 1)
+    print("Specific Hypothesis:", s)
+    print("General Hypothesis:", g)
+
+# Filter the general hypothesis
+gh = []
+for hypothesis in g:
+    if any(value != '?' for value in hypothesis):
+        gh.append(hypothesis)
+
+# Display final results
+print("\nFinal specific hypothesis:\n", s)
+print("\nFinal general hypothesis:\n", gh)
