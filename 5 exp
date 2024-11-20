@@ -3,8 +3,8 @@ import random
 import math
 
 # Load CSV file and convert to a dataset
-def loadcsv(filename):
-    lines = csv.reader(open(filename, "r"))
+def loadcsv(naivedata.csv):
+    lines = csv.reader(open(naivedata.csv, "r"))
     dataset = list(lines)
     for i in range(len(dataset)):
         # Convert strings to floats for processing
