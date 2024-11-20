@@ -5,7 +5,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score
 
 # Load dataset
-msg = pd.read_csv('document.csv', names=['message', 'label'])
+msg = pd.read_csv('document6.csv', names=['message', 'label'])
 print("Total Instances of Dataset: ", msg.shape[0])
 
 # Map labels to numerical values
