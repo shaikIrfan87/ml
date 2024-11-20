@@ -3,7 +3,7 @@ import random
 import math
 
 # Load CSV file and convert to a dataset
-def loadcsv(naivedata.csv):
+def loadcsv(naivedata5.csv):
     lines = csv.reader(open(naivedata.csv, "r"))
     dataset = list(lines)
     for i in range(len(dataset)):
