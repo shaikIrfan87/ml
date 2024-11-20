@@ -1,7 +1,7 @@
 import csv
 
 # Open and read the CSV file
-with open("trainingdata.csv") as f:
+with open("trainingdata2.csv") as f:
     csv_file = csv.reader(f)
     data = list(csv_file)
 
